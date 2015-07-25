@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    >
+
+    <ImageView
+        android:contentDescription="@null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/img_view_corner"
+        android:src="@drawable/img_midu_full"
+        android:adjustViewBounds="true"
+        android:id="@+id/img_picture"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="7dp"
+        android:background="@drawable/bg_pic_bottom"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_download" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="11sp"
+            android:text="325"
+            android:id="@+id/tv_downloaded" />
+
+    </LinearLayout>
+
+</RelativeLayout>

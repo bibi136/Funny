@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/img_picture"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/img_view_corner"
+        android:src="@drawable/img_1"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/img_picture"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Cùng cầu nguyện nào"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+            android:textSize="13sp"
+            android:lines="2"
+            android:maxLines="2"
+            android:text="Đầu xuân năm mới cùng cầu nguyện cùng em nào" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_download_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:singleLine="true"
+                android:textSize="11sp"
+                android:text="325"
+                android:id="@+id/tv_downloaded" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textSize="10sp"
+            android:layout_marginBottom="5dp"
+            android:text="11:55 PM, 02/23/2014"
+            android:id="@+id/tv_timeupload" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

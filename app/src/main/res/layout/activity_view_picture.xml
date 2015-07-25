@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hungnt.funny.Activity.ViewPictureActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/img_midu_full"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:id="@+id/img_picture" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#CC000000"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="12dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_back"
+            android:contentDescription="@null"
+            android:id="@+id/img_back" />
+
+        <TextView
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Quyến rũ Midu"
+            android:textColor="#ffffff"
+            android:id="@+id/tvTitle" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#CC000000"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_download"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left|center"
+            android:text="150 Downloaded"
+            android:textSize="13sp"
+            android:paddingLeft="14dp"
+            android:textColor="#ffffff"
+            android:id="@+id/tv_downloaded" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

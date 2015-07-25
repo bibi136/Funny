@@ -1,0 +1,146 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2b2b2b"
+        android:paddingBottom="7dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="7dp">
+
+        <ImageView
+            android:id="@+id/img_menu"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_menu" />
+
+        <RadioGroup
+            android:id="@+id/rg_hotest"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_radiogroup"
+            android:checkedButton="@+id/newest"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RadioButton
+                android:id="@+id/newest"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radio_newest"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Newest"
+                android:textColor="#ffffff" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radio_hotest"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Hotest"
+                android:textColor="#ffffff" />
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_rdbtn">
+
+
+            <RadioGroup
+                android:id="@+id/rg_grid"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:checkedButton="@+id/rd_btn_list"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/rd_btn_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_newest"
+                    android:button="@null" />
+
+                <RadioButton
+                    android:id="@+id/rd_btn_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_hotest"
+                    android:button="@null" />
+            </RadioGroup>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="9dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_list" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_grid" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:background="#eaeaea"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="23/02/2014"
+        android:textColor="#666666" />
+
+    <GridView
+        android:id="@+id/grid_show"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:alwaysDrawnWithCache="true"
+        android:background="@drawable/bg_rdbtn"
+        android:choiceMode="singleChoice"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
+        android:listSelector="@null"
+        android:numColumns="1"
+        android:padding="13dp"
+        android:gravity="center"
+        android:scrollingCache="true"
+        android:smoothScrollbar="true"
+        android:stretchMode="columnWidth"
+        />
+
+</LinearLayout>
