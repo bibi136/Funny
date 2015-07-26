@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
@@ -52,14 +53,16 @@ public class MainActivity extends Activity {
 
         gv_picture.setAdapter(pictureAdapterList);
 
-        rg_grid.setOnCheckedChangeListener((group, checkedId) -> {
-            if(checkedId == R.id.rd_btn_list){
-                gv_picture.setNumColumns(1);
-                gv_picture.setAdapter(pictureAdapterList);
-            }
-            else{
-                gv_picture.setNumColumns(3);
-                gv_picture.setAdapter(pictureAdapterGrid);
+        rg_grid.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.rd_btn_list) {
+                    gv_picture.setNumColumns(1);
+                    gv_picture.setAdapter(pictureAdapterList);
+                } else {
+                    gv_picture.setNumColumns(3);
+                    gv_picture.setAdapter(pictureAdapterGrid);
+                }
             }
         });
     }
@@ -67,7 +70,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        gv_picture.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gv_picture.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this,ViewPictureActivity.class);
