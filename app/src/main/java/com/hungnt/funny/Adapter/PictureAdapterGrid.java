@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.hungnt.funny.Object.NewsObj;
 import com.hungnt.funny.R;
+import com.hungnt.funny.Tools.ResizeBitmap;
 
 import java.util.ArrayList;
 
@@ -50,11 +51,9 @@ public class PictureAdapterGrid extends BaseAdapter {
 //        Bitmap bm;
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (view == null) {
-
-            view = new View(context);
 //            bm = BitmapFactory.decodeResource(context.getResources(), listNews.get(position).getPicture());
-            view = inflater.inflate(R.layout.grid_item, parent, false);
             viewHolder = new ViewHolder();
+            view = inflater.inflate(R.layout.item_gridview, parent, false);
             viewHolder.setDownloaded((TextView) view.findViewById(R.id.tv_downloaded));
             viewHolder.setImg_picture((ImageView) view.findViewById(R.id.img_picture));
             view.setTag(viewHolder);
@@ -62,10 +61,9 @@ public class PictureAdapterGrid extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-//        bm = BitmapFactory.decodeResource(context.getResources(), listNews.get(position).getPicture());
         viewHolder.getDownloaded().setText(listNews.get(position).getDownloaded());
-//        viewHolder.getImg_picture().setImageBitmap(ImageHelper.getRoundedCornerBitmap(bm, 3));
-        viewHolder.getImg_picture().setImageResource(listNews.get(position).getPicture());
+        viewHolder.getImg_picture().setImageBitmap(
+                ResizeBitmap.decodeSampledBitmapFromResource(context.getResources(), listNews.get(position).getPicture(), 100, 100));
 
         return view;
     }

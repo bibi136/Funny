@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.hungnt.funny.Object.NewsObj;
 import com.hungnt.funny.R;
+import com.hungnt.funny.Tools.ResizeBitmap;
 
 import java.util.ArrayList;
 
@@ -19,8 +20,8 @@ import java.util.ArrayList;
 public class PictureAdapterList extends BaseAdapter {
 
     private Context context;
-
     private ArrayList<NewsObj> listNews;
+
 
     public PictureAdapterList(Context context, ArrayList<NewsObj> listNews) {
         this.context = context;
@@ -50,30 +51,31 @@ public class PictureAdapterList extends BaseAdapter {
 //        Bitmap bm;
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        if(view == null){
+        if (view == null) {
 //            bm = BitmapFactory.decodeResource(context.getResources(),listNews.get(position).getPicture());
 //            view = new View(context);
-            view = inflater.inflate(R.layout.grid_item_row,parent,false);
             viewHolder = new ViewHolder();
+            view = inflater.inflate(R.layout.item_listview, parent, false);
             viewHolder.setDescription((TextView) view.findViewById(R.id.tv_description));
             viewHolder.setDownloaded((TextView) view.findViewById(R.id.tv_downloaded));
             viewHolder.setTimeUpload((TextView) view.findViewById(R.id.tv_timeupload));
             viewHolder.setTitle((TextView) view.findViewById(R.id.tv_title));
             viewHolder.setImg_picture((ImageView) view.findViewById(R.id.img_picture));
             view.setTag(viewHolder);
-        }
-        else {
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
 
 //        bm = BitmapFactory.decodeResource(context.getResources(),listNews.get(position).getPicture());
         viewHolder.getDescription().setText(listNews.get(position).getDescription());
-        viewHolder.getDownloaded().setText(listNews.get(position).getDownloaded());
-//        viewHolder.getImg_picture().setImageBitmap(ImageHelper.getRoundedCornerBitmap(bm,3));
         viewHolder.getTimeUpload().setText(listNews.get(position).getTimeUpload());
         viewHolder.getTitle().setText(listNews.get(position).getTitle());
-        viewHolder.getImg_picture().setImageResource(listNews.get(position).getPicture());
+        viewHolder.getDownloaded().setText(listNews.get(position).getDownloaded());
+        viewHolder.getImg_picture().setImageBitmap(
+                ResizeBitmap.decodeSampledBitmapFromResource(context.getResources(), listNews.get(position).getPicture(), 100, 100));
 
         return view;
     }
+
+
 }

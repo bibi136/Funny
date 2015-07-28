@@ -25,10 +25,8 @@ public class MainActivity extends Activity {
 
     private RadioGroup rg_new;
     private RadioGroup rg_grid;
-
     private GridView gv_picture;
     private ImageView img_menu;
-
     private TextView tv_time;
 
     public static ArrayList<NewsObj> listNews = new ArrayList<>();
@@ -73,8 +71,8 @@ public class MainActivity extends Activity {
         gv_picture.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this,ViewPictureActivity.class);
-                intent.putExtra(EXTRA_NEWS,position);
+                Intent intent = new Intent(MainActivity.this, ViewPictureActivity.class);
+                intent.putExtra(EXTRA_NEWS, position);
                 startActivity(intent);
             }
         });

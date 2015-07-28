@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_corner"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:id="@+id/btClose"
+            android:padding="12dp"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_close" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Share on Twitter"
+            android:textColor="#000000"
+            android:textSize="15sp"
+             />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_alignParentBottom="true"
+            android:background="#e0e0e6" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/img_picture" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="abc"
+            android:textSize="12sp"
+            android:paddingLeft="17dp"
+            android:paddingRight="10dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btSend"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Send"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:focusable="true"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="@drawable/bg_button_send"/>
+
+</LinearLayout>
